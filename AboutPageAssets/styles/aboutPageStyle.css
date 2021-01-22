@@ -29,6 +29,7 @@ header #headernav {
 
 header #logo {
 	/* Company Logo text */
+	text-align: left;
 	width: 28%;
 	float: left;
 	padding-left: 2%;
