@@ -1,7 +1,7 @@
 @charset "UTF-8";
 #mainwrapper header {
 	/*Header */
-	background-color: rgba(208,207,207,1.00);
+	background-color: #1D3557;
 	overflow: auto;
 	font-family: montserrat, sans-serif;
 	font-style: normal;
