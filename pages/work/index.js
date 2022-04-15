@@ -1,23 +1,24 @@
 import { Container, Card } from "react-bootstrap";
-import { getPostsMetaData } from "../../utils/getPostsData";
+// import { getPostsMetaData } from "../../utils/getPostsData";
+import getPosts from "../../scripts/fileSystem";
 
 import { useRouter } from "next/router";
 
-const WorkHome = ({ postsData }) => {
+const WorkHome = ({ posts }) => {
     const router = useRouter();
     
     return (
         <Container>
             <h1>My Projects</h1>
-            {postsData.map((metadata) => {
+            {posts.map((post, index) => {
             return (
             <Card
-                key = {metadata.id}
-                onClick={() => router.push(`/work/${metadata.id}`)}
+                key = {index}
+                onClick={() => router.push(`/work/${post.data.slug}`)}
             >
                 <Card.Body>
-                    <Card.Title>{metadata.title}</Card.Title>
-                    <Card.Text>{metadata.description}</Card.Text>
+                    <Card.Title>{post.data.title}</Card.Title>
+                    <Card.Text>{post.data.description}</Card.Text>
                 </Card.Body>
             </Card>
             )
@@ -28,11 +29,12 @@ const WorkHome = ({ postsData }) => {
 
 export default WorkHome;
 
-export const getStaticProps = async () => {
-    const postsData = getPostsMetaData();
+export const getStaticProps = () => {
+    const posts = getPosts(10);
+  
     return {
       props: {
-        postsData: postsData,
-      }
-    }
-}
+        posts,
+      },
+    };
+  };
