@@ -1,10 +1,25 @@
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+import Typed from 'react-typed'
 
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const [offsetY, setOffsetY] = useState(0);
+
+  const handleScroll = () => {
+    setOffsetY(window.pageYOffset);
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -15,19 +30,83 @@ export default function Home() {
 
       {/* <main className={styles.main}> */}
       <main>
+        
+        <h1 className={styles.title}>
+          Hi, I'm <a href="">Renault</a>.
+          <p className={styles.description}>
+            I'm a 
+            <code className={styles.code}>
+              <Typed 
+                strings={[
+                  'Web Developer',
+                  'Product Designer',
+                  'Embedded Systems Engineer',
+                  'Graphic Designer',
+                ]}
+                typeSpeed={120}
+                backSpeed={60}
+                loop
+              />
+            </code>
+            .
+          </p>
+        </h1>
 
-        <Parallax pages={2}>
-          <ParallaxLayer>
+        <div className={styles.grid} style={{transform: `translateY(${offsetY * 1.2}px)`  }}>
+          <a href="https://nextjs.org/docs" className={styles.card}>
+            <h2>Documentation &rarr;</h2>
+            <p>Find in-depth information about Next.js features and API.</p>
+          </a>
+
+          <a href="https://nextjs.org/learn" className={styles.card}>
+            <h2>Learn &rarr;</h2>
+            <p>Learn about Next.js in an interactive course with quizzes!</p>
+          </a>
+
+          <a
+            href="https://github.com/vercelu/next.js/tree/canary/examples"
+            className={styles.card}
+          >
+            <h2>Examples &rarr;</h2>
+            <p>Discover and deploy boilerplate example Next.js projects.</p>
+          </a>
+
+          <a
+            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            className={styles.card}
+          >
+            <h2>Deploy &rarr;</h2>
+            <p>
+              Instantly deploy your Next.js site to a public URL with Vercel.
+            </p>
+          </a>
+        </div>
+        
+        {/* <Parallax pages={2}>
+          <ParallaxLayer offset={0} speed={1}>
             <h1 className={styles.title}>
               Hi, I'm <a href="">Renault</a>.
               <p className={styles.description}>
-                <code className={styles.code}>Web Developer</code>
-                , Product Designer, Embedded Systems Engineer, Graphic Designer, and Digital Marketer.
+                I'm a 
+                <code className={styles.code}>
+                  <Typed 
+                    strings={[
+                      'Web Developer',
+                      'Product Designer',
+                      'Embedded Systems Engineer',
+                      'Graphic Designer',
+                    ]}
+                    typeSpeed={120}
+                    backSpeed={60}
+                    loop
+                  />
+                </code>
+                .
               </p>
             </h1>
 
-          </ParallaxLayer>
-          <ParallaxLayer offset={0.5} speed={2}>
+          </ParallaxLayer> */}
+          {/* <ParallaxLayer offset={0.5} speed={2}>
             <div className={styles.grid}>
               <a href="https://nextjs.org/docs" className={styles.card}>
                 <h2>Documentation &rarr;</h2>
@@ -58,7 +137,7 @@ export default function Home() {
               </a>
             </div>
           </ParallaxLayer>
-        </Parallax>
+        </Parallax> */}
       </main>
 
 
