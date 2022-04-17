@@ -77,6 +77,17 @@ export default function Home() {
             Projects &rarr;
           </Button>
         </div>
+
+        <div className={styles.banner} style={{
+          transform: `translateY(-${offsetY * 0.7}px)`,
+          height: `${500}px`,
+        }}>
+          <h2>Contact Me</h2>
+          <p>Find me through different channels!</p>
+          <Button variant="primary" href="/work" style={{ width: "fit-content" }}>
+            Contact &rarr;
+          </Button>
+        </div>
         
         {/* <Parallax pages={2}>
           <ParallaxLayer offset={0} speed={1}>
