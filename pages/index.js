@@ -34,30 +34,38 @@ export default function Home() {
       {/* <main className={styles.main}> */}
       <main>
         
-        <h1 className={styles.title}>
-          Hi, I'm <a href="">Renault</a>.
-          <p className={styles.description}>
-            I'm a 
-            <code className={styles.code}>
-              <Typed 
-                strings={[
-                  'Web Developer',
-                  'Product Designer',
-                  'Embedded Systems Engineer',
-                  'Graphic Designer',
-                ]}
-                typeSpeed={120}
-                backSpeed={60}
-                loop
-              />
-            </code>
-            .
-          </p>
-        </h1>
+        <div className={styles.banner} style={{ 
+          // transform: `translateY(-${offsetY * 1.2}px)`,
+          height: `${500}px`,
+          // backgroundColor: `rgba(0, 0, 0, ${offsetY / 500})`,
+          // backgroundColor: `rgba(255, 255, 255, ${offsetY / screenHeight})`,
+        }}>
+          <h1 className={styles.title}>
+            Hi, I'm <a href="">Renault</a>.
+            <p className={styles.description}>
+              I'm a 
+              <code className={styles.code}>
+                <Typed 
+                  strings={[
+                    'Web Developer',
+                    'Product Designer',
+                    'Embedded Systems Engineer',
+                    'Graphic Designer',
+                  ]}
+                  typeSpeed={120}
+                  backSpeed={60}
+                  loop
+                />
+              </code>
+              .
+            </p>
+          </h1>
+        </div>
 
         <div className={styles.banner} style={{ 
           transform: `translateY(-${offsetY * 1.2}px)`,
           height: `${500}px`,
+          // backgroundColor: `rgba(0, 0, 0, ${offsetY / 500})`,
           // backgroundColor: `rgba(255, 255, 255, ${offsetY / screenHeight})`,
         }}>
           <h2>About Me</h2>
