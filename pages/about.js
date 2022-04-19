@@ -16,9 +16,20 @@ const About = () => {
     
     return (
         <div>
-            <h1>About Me</h1>
-            <h3>Skills</h3>
-            <h3>Education</h3>
+            <div style={{ height: 500 }}>
+                <h1>About Me</h1>
+            </div>
+            <div style={{ height: 500 }}>
+                <h3>Skills</h3>
+            </div>
+            <div>
+                <div style ={{
+                    height: 500,
+                    transform: offsetY > 200 ? `translateX(${offsetY}px)` : '0px',
+                }}>
+                    <h3>Education</h3>
+                </div>
+            </div>
             <h3>Achievements</h3>
         </div>
     )
