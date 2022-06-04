@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import { Button } from 'react-bootstrap'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+import { Canvas } from '@react-three/fiber'
+import THREE from 'three'
 import Typed from 'react-typed'
 
 import styles from '../styles/Home.module.css'
@@ -10,14 +12,36 @@ import styles from '../styles/Home.module.css'
 export default function Home() {
   const [offsetY, setOffsetY] = useState(0);
   // let screenHeight = 0;
+  const [starPositions, setStarPositions] = useState([]);
+  const [starSize, setStarSize] = useState([]);
+
+  const seedStarPosition = (numStars) => {
+    setStarPositions(Array(numStars).fill().map(() => Array(3).fill().map(() => Math.random() * 10 - 5)));
+    setStarSize(Array(numStars).fill().map(() => Math.random() * 0.25));
+  }
+
+  const addStar = (i) => {
+    console.log(starPositions[i]);
+    return (
+      <mesh position={starPositions[i]} scale={starSize[i]} recieveShadow={true} castShadow={true}>
+        <sphereGeometry />
+        <meshStandardMaterial color="white" />
+      </mesh>
+    )
+  }
 
   const handleScroll = () => {
+    console.log("starPositions", starPositions);
+    const tmp = Array(starPositions.length).fill().map(() => Array(3).fill().map(() => Math.random() * 10 - 5));
+    console.log("tmp", tmp);
+    // setStarPositions(tmp);
     setOffsetY(window.pageYOffset);
   }
 
   useEffect(() => {
     // screenHeight = window.innerHeight;
     window.addEventListener('scroll', handleScroll);
+    seedStarPosition(60);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -33,6 +57,27 @@ export default function Home() {
 
       {/* <main className={styles.main}> */}
       <main>
+
+        <div className={styles.scene}>
+          <Canvas
+            shadows={true}
+            className={styles.canvas}
+          >
+            <camera position={[0, 0, 10]} />
+            <ambientLight  color={"white"} intensity={0.5} />
+            {/* <mesh rotation-x={3} rotation-y={0.2} recieveShadow={true} castShadow={true}>
+              <boxGeometry />
+              <meshPhysicalMaterial  color={"white"} />
+            </mesh> */}
+
+            <mesh position={[50,50,50]} scale={1} >
+              <sphereGeometry />
+              <meshPhysicalMaterial color="white" />
+            </mesh>
+
+            {Array(10).fill().map((_, i) => addStar(i))}
+          </Canvas>
+        </div>
         
         <div className={styles.banner} style={{ 
           // transform: `translateY(-${offsetY * 1.2}px)`,
