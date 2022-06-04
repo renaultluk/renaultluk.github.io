@@ -11,17 +11,19 @@ const WorkHome = ({ posts }) => {
         <Container>
             <h1>My Projects</h1>
             {posts.map((post, index) => {
-            return (
-            <Card
-                key = {index}
-                onClick={() => router.push(`/work/${post.data.slug}`)}
-            >
-                <Card.Body>
-                    <Card.Title>{post.data.title}</Card.Title>
-                    <Card.Text>{post.data.description}</Card.Text>
-                </Card.Body>
-            </Card>
-            )
+                return (
+                    <Card
+                        key = {index}
+                        style={{ width: '18rem', margin: '10px' }}
+                        onClick={() => router.push(`/work/${post.data.slug}`)}
+                    >
+                        <Card.Img style={{ height: '10rem', objectFit: 'cover' }} variant="top" src={`projects/${post.data.slug}/${post.data.thumbnail}`} />
+                        <Card.Body>
+                            <Card.Title>{post.data.title}</Card.Title>
+                            <Card.Text>{post.data.description}</Card.Text>
+                        </Card.Body>
+                    </Card>
+                )
             })}
         </Container>
     )
