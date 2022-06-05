@@ -12,3 +12,85 @@ import Head from 'next/head'
 </Head>
 
 # Smart Traffic Management System
+
+This project was done as a submission for the course Internet of Things: From Component 
+Skills to System Integration at HKUST.
+## Background
+As a course project, it has a few requirements that we had to fulfill:
+1. The system must be a functional IoT system with a meaningful application.  
+2. The system must include the highlighted components, and other components listed are preferred as well.<br/>
+**a. Sensors**<br/>
+**b. Embedded system**<br/>
+c. Amplifiers<br/>
+d. Actuators<br/>
+e. Signal/data processing<br/> 
+**f. Communication system**<br/>
+**g. MQTT**<br/>
+h. Data analytics<br/> 
+i. Machine Learning<br/>
+## Motivation
+The reasons we would like to establish a smart road planning and self-driving project are to prevent traffic congestions and car accidents. Imagine if we could collect GPS data of all the vehicles and control car movements by algorithm calculations. Then there will not be any man-made accidents. 
+
+## Background Research
+In terms of road planning, there have been projects like intelligent traffic lights. It collects road condition data including traffic congestions and road accidents due to adverse weather circumstances. Then it would control traffic flow by adjusting waiting and running time. 
+
+For self-driving, the existing technology allows users to set the destination at the beginning and the system would calculate a route. The self-driving car has a lidar installed to detect 60 meters range around the car. A dynamic three-dimensional map of the car’s current environment is generated to obtain the car’s current position relative to the map. Besides, there would be a radar to calculate distances to obstacles. Finally, AI is applied to self-drive the vehicles. 
+
+Our proposed solution is to combine the two existing technologies to avoid traffic congestions and eliminate car accidents. First, users could choose the desired destination and the system would pre-planned the routes. Then safety measures with ultrasound sensors are established to keep distance between the vehicles to avoid car crashes. 
+
+## Design and Methodology
+#### Setup
+The map can be seen as a weighted graph, where points of significance (e.g. intersections, destinations) are the nodes, while the roads are the edges. The edges are weighted by their physical lengths and distance between the nodes. Additional weight will be added to the edges if a vehicle plans to pass through it.
+
+
+
+#### Operation Flow
+
+*1. Pre-journey planning*<br/>
+The vehicle will plan out its journey before it starts driving. It first searches paths possible using Dijkstra’s Algorithm, by tracing each path along with the nodes, and returning the shortest distance from the initial node to all of the other nodes. It ultimately reconstructs the path through tracing the target's immediate predecessor, and the immediate predecessor of that, and so on; and saves the steering directions in a queue.
+
+
+
+After it finishes planning, its path will be appended on a list on the server through MQTT, where additional weights will be added onto each edge that the vehicle will pass through, to deter other vehicles from occupying the same road.
+
+
+*2. Driving*<br/>
+
+The vehicle drives along the line on the road, where the infrared line sensor will guide the vehicle to follow closely with the PID controller, whereby the vehicle will calculate a weighted sum of the data from each IR sensor inside the line sensor, and offset the PWM of the motors driving the wheels accordingly.
+
+*3. Passing a node*<br/>
+
+When the vehicle passes a node, the following operation will be carried out:
+
+Steering: When facing a crossroads, the line sensor will either scan from left to right (if going left) or from right to left (if going right) and only read the first line it encounters. By carrying out PID with only the relevant line, the vehicle will steer without affecting the overall speed of the vehicle.
+Updating the direction queue: The first element of the direction queue (the operation it just carried out) will be dequeued, so the vehicle will check for the next element in the queue next time.
+Updating the map: The edge that the vehicle just passed through will be removed from the list on the server, and the additional weight on the edge will be subtracted, freeing up the path for other vehicles.
+
+a. System diagram (path planning)
+
+
+
+(system flowchart)
+
+
+
+
+b. Basic components included and their functions 
+
+- Arduino board - signal control<br/>
+- Motor driver - motor control<br/>
+- Motors - actuators <br/>
+- Infrared sensors - line follower<br/>
+- UWB - location detection<br/>
+- Ultrasound sensor - distance detection<br/>
+
+c. Integration/signal flow between different components 
+
+
+The Arduino handles the processing of signal and data. The line sensor and the ultrasonic sensor feeds in real-time data to actuate the motors with a motor driver, and updates the weight map through MQTT.
+
+
+## Results
+The line following and path planning functions are able to be achieved. UWB is able to extract basic information from the Arduino board. Ultrasonic sensor is able to detect distance changes between the cars. Vehicle motors could follow PID for steering.
+
+While we faced a lot of unexpected technical issues in this project, including the malfunction of UWB, wrong sensitivity of sensors, and so on; we learnt a lot from trial and error, such as translating design requirements into technical implementations, taking into consideration the sampling rate of each sensor, and utilization of MQTT.
