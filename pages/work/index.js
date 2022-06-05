@@ -14,10 +14,10 @@ const WorkHome = ({ posts }) => {
                 <Row className="justify-content-md-center">
                     {posts.map((post, index) => {
                         return (
-                            <Col>
+                            <Col xs={6} md={4} lg={3}>
                                 <Card
                                     key = {index}
-                                    style={{ width: '18rem', margin: '10px' }}
+                                    style={{ maxWidth: '18rem', margin: '10px' }}
                                     onClick={() => router.push(`/work/${post.data.slug}`)}
                                 >
                                     <Card.Img style={{ height: '10rem', objectFit: 'cover' }} variant="top" src={`projects/${post.data.slug}/${post.data.thumbnail}`} />
