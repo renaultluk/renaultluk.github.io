@@ -20,7 +20,10 @@ const getPosts = (limit) => {
       const slug = file.name.replace(/.mdx$/, '');
       return { data, content, slug };
     })
-    .filter((post) => post);
+    .filter((post) => post)
+    .sort((a, b) => {
+      return new Date(b.data.finishDate) - new Date(a.data.finishDate);
+    });
 
   if (limit) {
     return posts.filter((post, index) => {
