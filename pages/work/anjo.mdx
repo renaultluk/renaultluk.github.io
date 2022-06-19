@@ -6,9 +6,14 @@ finishDate: "2021-06-01"
 ---
 
 import Head from 'next/head'
+import PostLayout from '../../components/PostLayout'
 
 <Head>
     <title>ANJO Lamp</title>
 </Head>
 
 # ANJO Lamp
+
+export default function Layout({children}) {
+  return <PostLayout>{children}</PostLayout>
+}

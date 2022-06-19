@@ -6,6 +6,7 @@ finishDate: "2022-04-01"
 ---
 
 import Head from 'next/head'
+import PostLayout from '../../components/PostLayout'
 
 <Head>
     <title>USThing x UST Fintech Easter Campaign Game</title>
@@ -14,3 +15,7 @@ import Head from 'next/head'
 </Head>
 
 # USThing x UST Fintech Easter Campaign Game
+
+export default function Layout({children}) {
+  return <PostLayout>{children}</PostLayout>
+}

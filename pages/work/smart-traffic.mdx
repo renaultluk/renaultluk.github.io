@@ -7,6 +7,7 @@ finishDate: "2021-12-31"
 
 import Head from 'next/head'
 import image from 'next/image'
+import PostLayout from '../../components/PostLayout'
 
 <Head>
     <title>Smart Traffic Management System</title>
@@ -101,3 +102,7 @@ While we faced a lot of unexpected technical issues in this project, including t
 ## Full Repository
 You can find the full repository of this project at:
 https://github.com/renaultluk/Smart-Traffic-Management-System
+
+export default function Layout({children}) {
+  return <PostLayout>{children}</PostLayout>
+}

@@ -6,9 +6,14 @@ finishDate: "2020-01-01"
 ---
 
 import Head from 'next/head'
+import PostLayout from '../../components/PostLayout'
 
 <Head>
     <title>ClipAsk</title>
 </Head>
 
 # ClipAsk
+
+export default function Layout({children}) {
+  return <PostLayout>{children}</PostLayout>
+}

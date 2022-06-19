@@ -7,6 +7,7 @@ finishDate: "2022-05-01"
 ---
 
 import Head from 'next/head'
+import PostLayout from '../../components/PostLayout'
 
 <Head>
     <title> Thiftee | Renault Luk </title>
@@ -63,3 +64,7 @@ For the licenses for 3rd party libraries used in this projects, please see the L
 ## Full Repository
 You can find the full repository of this project at:
 https://github.com/renaultluk/hackUST-Online-Thrift-Shop
+
+export default function Layout({children}) {
+  return <PostLayout>{children}</PostLayout>
+}

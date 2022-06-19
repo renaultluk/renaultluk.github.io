@@ -6,9 +6,14 @@ finishDate: "2022-08-31"
 ---
 
 import Head from 'next/head'
+import PostLayout from '../../components/PostLayout'
 
 <Head>
     <title>HKPost Smart Locker</title>
 </Head>
 
 # HKPost Smart Locker
+
+export default function Layout({children}) {
+  return <PostLayout>{children}</PostLayout>
+}

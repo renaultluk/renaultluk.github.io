@@ -7,9 +7,14 @@ finishDate: "2021-12-31"
 ---
 
 import Head from 'next/head'
+import PostLayout from '../../components/PostLayout'
 
 <Head>
     <title>Cathay Pacific Flight Flask</title>
 </Head>
 
 # Cathay Pacific Flight Flask
+
+export default function Layout({children}) {
+  return <PostLayout>{children}</PostLayout>
+}
