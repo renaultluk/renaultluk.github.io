@@ -14,7 +14,7 @@ const WorkHome = ({ posts }) => {
                 <Row className="justify-content-md-center">
                     {posts.map((post, index) => {
                         return (
-                            <Col xs={6} md={4} lg={3}>
+                            <Col xs={12} md={6} lg={3}>
                                 <Card
                                     key = {index}
                                     style={{ maxWidth: '18rem', margin: '10px' }}

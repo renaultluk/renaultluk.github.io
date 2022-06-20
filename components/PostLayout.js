@@ -1,9 +1,12 @@
 import styles from '../styles/PostStyles.module.css';
 
-const PostLayout = ({ children }) => {
+const PostLayout = ({ children, title, slug, description, thumbnail, finishDate }) => {
     return (
         <main className={styles.postMain}>
-            {/* <img src={children.meta.thumbnail} alt={children.meta.title} className={styles.postThumbnail} /> */}
+            <h1 className={styles.postTitle}>{title}</h1>
+            <h2 className={styles.postDes}>{description}</h2>
+            <span className={styles.finishDate}>{finishDate}</span>
+            {/* <img src={``} alt={postMeta.title} className={styles.postThumbnail} /> */}
             {children}
         </main>
     );
