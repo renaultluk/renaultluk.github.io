@@ -6,16 +6,7 @@ thumbnail: sis-thumbnail.jpg
 finishDate: "2021-12-31"
 ---
 
-import Head from 'next/head'
 import PostLayout from '../../components/PostLayout'
-
-<Head>
-    <title>Student Information System Redesign</title>
-    <meta name="description" content="A redesign of the SIS for better user experience on mobile." />
-    <meta name="keywords" content="SIS, redesign, mobile, user experience" />
-</Head>
-
-# Student Information System Redesign
 
 export default function Layout({children}) {
   return <PostLayout title="Student Information System Redesign" slug="sis" description="A redesign of the SIS for better user experience on mobile." thumbnail="sis-thumbnail.jpg" finishDate="2021-12-31">{children}</PostLayout>

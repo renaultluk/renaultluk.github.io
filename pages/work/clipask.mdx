@@ -6,14 +6,7 @@ finishDate: "2020-01-01"
 thumbnail: clipask-icon.png
 ---
 
-import Head from 'next/head'
 import PostLayout from '../../components/PostLayout'
-
-<Head>
-    <title>ClipAsk</title>
-</Head>
-
-# ClipAsk
 
 export default function Layout({children}) {
   return <PostLayout title="ClipAsk" slug="clipask" description="A learning platform designed for students, by students." finishDate="2020-01-01" thumbnail="clipask-icon.png">{children}</PostLayout>
