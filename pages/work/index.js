@@ -38,7 +38,7 @@ const WorkHome = ({ posts }) => {
 export default WorkHome;
 
 export const getStaticProps = () => {
-    const posts = getPosts(10);
+    const posts = getPosts(15);
   
     return {
       props: {

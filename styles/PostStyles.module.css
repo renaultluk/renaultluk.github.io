@@ -19,3 +19,8 @@
     margin-bottom: 1rem;
     color:darkgrey;
 }
+
+.postThumbnail {
+    object-fit: cover;
+    margin-bottom: 2rem;
+}
