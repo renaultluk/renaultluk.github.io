@@ -36,14 +36,14 @@ Our proposed solution is to combine the two existing technologies to avoid traff
 ## Design and Methodology
 #### Setup
 The map can be seen as a weighted graph, where points of significance (e.g. intersections, destinations) are the nodes, while the roads are the edges. The edges are weighted by their physical lengths and distance between the nodes. Additional weight will be added to the edges if a vehicle plans to pass through it.
-<img src="/projects/smart-traffic/image1.png" alt="map" width="500" height="500" />
+<img src="/projects/smart-traffic/image1.png" alt="map" width="100%" />
 
 
 #### Operation Flow
 
 *1. Pre-journey planning*<br/>
 The vehicle will plan out its journey before it starts driving. It first searches paths possible using Dijkstra’s Algorithm, by tracing each path along with the nodes, and returning the shortest distance from the initial node to all of the other nodes. It ultimately reconstructs the path through tracing the target's immediate predecessor, and the immediate predecessor of that, and so on; and saves the steering directions in a queue.
-<img src="/projects/smart-traffic/image6.png" alt="map" width="500" height="370" />
+<img src="/projects/smart-traffic/image6.png" alt="map" width="100%" />
 
 
 After it finishes planning, its path will be appended on a list on the server through MQTT, where additional weights will be added onto each edge that the vehicle will pass through, to deter other vehicles from occupying the same road.
@@ -62,11 +62,11 @@ Updating the direction queue: The first element of the direction queue (the oper
 Updating the map: The edge that the vehicle just passed through will be removed from the list on the server, and the additional weight on the edge will be subtracted, freeing up the path for other vehicles.
 
 a. System diagram (path planning)
-<img src="/projects/smart-traffic/image4.png" alt="map" width="370" height="400" />
+<img src="/projects/smart-traffic/image4.png" alt="map" width="100%" />
 
 
 (system flowchart)
-<img src="/projects/smart-traffic/image2.png" alt="map" width="240" height="400" />
+<img src="/projects/smart-traffic/image2.png" alt="map" width="100%" />
 
 
 
@@ -80,8 +80,8 @@ b. Basic components included and their functions
 - Ultrasound sensor - distance detection<br/>
 
 c. Integration/signal flow between different components 
-<img src="/projects/smart-traffic/image5.png" alt="map" width="600" height="370" />
-<img src="/projects/smart-traffic/image3.png" alt="map" width="470" height="370" />
+<img src="/projects/smart-traffic/image5.png" alt="map" width="100%" />
+<img src="/projects/smart-traffic/image3.png" alt="map" width="100%" />
 
 The Arduino handles the processing of signal and data. The line sensor and the ultrasonic sensor feeds in real-time data to actuate the motors with a motor driver, and updates the weight map through MQTT.
 
