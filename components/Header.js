@@ -9,11 +9,7 @@ const Header = () => {
                 <Nav className="mr-auto">
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/about">About Me</Nav.Link>
-                    <NavDropdown title="My Work" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">Web Development</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">Product Design & Embedded Systems</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Graphic Design & Digital Marketing</NavDropdown.Item>
-                    </NavDropdown>
+                    <Nav.Link href='/work'>My Work</Nav.Link>
                     <Nav.Link href="/contact">Contact Me</Nav.Link>
                 </Nav>
             </Navbar.Collapse>

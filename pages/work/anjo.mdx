@@ -3,12 +3,11 @@ title: ANJO Lamp
 slug: anjo
 description: A lamp designed for the professional work-from-home setting.
 finishDate: "2021-06-01"
+thumbnail: anjo-white-bg.png
 ---
 
-import Head from 'next/head'
+import PostLayout from '../../components/PostLayout'
 
-<Head>
-    <title>ANJO Lamp</title>
-</Head>
-
-# ANJO Lamp
+export default function Layout({children}) {
+  return <PostLayout title="ANJO Lamp" slug="anjo" description="A lamp designed for the professional work-from-home setting." finishDate="2021-06-01" thumbnail="anjo-white-bg.png">{children}</PostLayout>
+}

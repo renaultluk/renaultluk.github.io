@@ -34,4 +34,13 @@ const getPosts = (limit) => {
   return posts;
 };
 
+export const getPostMeta = (slug) => {
+  const fileContent = fs.readFileSync(
+    path.join(process.cwd(), 'pages', 'work', `${slug}.mdx`),
+    'utf-8'
+  );
+  const { data, content } = matter(fileContent);
+  return data;
+}
+
 export default getPosts;

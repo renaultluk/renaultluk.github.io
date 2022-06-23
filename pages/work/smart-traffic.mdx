@@ -5,15 +5,8 @@ description: A prototype of an IoT-based traffic management system for smart cit
 finishDate: "2021-12-31"
 ---
 
-import Head from 'next/head'
 import image from 'next/image'
-
-<Head>
-    <title>Smart Traffic Management System</title>
-    <meta name="description" content="A prototype of an IoT-based traffic management system for smart cities" />
-</Head>
-
-# Smart Traffic Management System
+import PostLayout from '../../components/PostLayout'
 
 This project was done as a submission for the course Internet of Things: From Component 
 Skills to System Integration at HKUST.
@@ -101,3 +94,7 @@ While we faced a lot of unexpected technical issues in this project, including t
 ## Full Repository
 You can find the full repository of this project at:
 https://github.com/renaultluk/Smart-Traffic-Management-System
+
+export default function Layout({children}) {
+  return <PostLayout title="Smart Traffic Management System" slug="smart-traffic" description="A prototype of an IoT-based traffic management system for smart cities" finishDate="2021-12-31" thumbnail="">{children}</PostLayout>
+}

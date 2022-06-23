@@ -6,10 +6,8 @@ thumbnail: mobility-final.jpg
 finishDate: "2021-06-01"
 ---
 
-import Head from 'next/head'
+import PostLayout from '../../components/PostLayout'
 
-<Head>
-    <title>Smart Mobility Device</title>
-    <meta name="description" content="A mobile phone-controlled smart mobility device" />
-    <meta name="keywords" content="smart, mobility, device" />
-</Head>
+export default function Layout({children}) {
+  return <PostLayout title="Smart Mobility Device" slug="mobility" description="A mobile phone-controlled smart mobility device." finishDate="2021-06-01" thumbnail="mobility-final.jpg">{children}</PostLayout>
+}

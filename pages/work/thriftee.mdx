@@ -6,13 +6,7 @@ thumbnail: thriftee-logo.jpg
 finishDate: "2022-05-01"
 ---
 
-import Head from 'next/head'
-
-<Head>
-    <title> Thiftee | Renault Luk </title>
-</Head>
-
-# Thriftee (hackUST 2022 Submission)
+import PostLayout from '../../components/PostLayout'
 
 This project was done as a submission to hackUST 2022, the largest hackathon in Asia. We tackled the theme of ESG and Smart Shopping / Spending / Living Experience in The Era of Information Overflow.
 
@@ -66,3 +60,7 @@ For the licenses for 3rd party libraries used in this projects, please see the L
 ## Full Repository
 You can find the full repository of this project at:
 https://github.com/renaultluk/hackUST-Online-Thrift-Shop
+
+export default function Layout({children}) {
+  return <PostLayout title="Thriftee (hackUST 2022 Submission)" slug="thriftee" description="A thift shopping platform that encourages more environmentally friendly shopping habits." thumbnail="thriftee-logo.jpg" finishDate="2022-05-01">{children}</PostLayout>
+}
