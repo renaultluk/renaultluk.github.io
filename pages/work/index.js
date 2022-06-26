@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { Container, Card, Row, Col } from "react-bootstrap";
 // import { getPostsMetaData } from "../../utils/getPostsData";
 import getPosts from "../../scripts/fileSystem";
+import styles from '../../styles/WorkIndex.module.css'
 
 import { useRouter } from "next/router";
 
@@ -22,6 +23,8 @@ const WorkHome = ({ posts }) => {
                             return (
                                 <Col xs={12} md={6} lg={3}>
                                     <Card
+                                        className={styles.customCard}
+                                        bg="secondary"
                                         key = {index}
                                         style={{ maxWidth: '18rem', margin: '10px' }}
                                         onClick={() => router.push(`/work/${post.data.slug}`)}
