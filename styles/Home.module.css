@@ -1,6 +1,11 @@
 .container {
+  height: 100%;
   padding: 0 2rem;
-  background: linear-gradient(140deg, rgba(131,58,180,1) 21%, rgba(29,173,253,1) 64%, rgba(252,176,69,1) 100%);
+  /* background: linear-gradient(140deg, rgba(131,58,180,1) 21%, rgba(29,173,253,1) 64%, rgba(252,176,69,1) 100%); */
+  /* background-color: #29274C; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .main {
@@ -61,7 +66,8 @@
 
 .code {
   background: rgba(50, 50, 50, 0.2);
-  color:bisque;
+  /* color:bisque; */
+  color: #D295BF;
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
@@ -75,7 +81,8 @@
   /* align-items: center; */
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
+  /* max-width: 800px; */
+  width: 100%;
 }
 
 .card {

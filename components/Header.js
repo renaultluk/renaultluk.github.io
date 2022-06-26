@@ -2,7 +2,7 @@ import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-boots
 
 const Header = () => {
     return (
-        <Navbar sticky="top" expand="lg" style={{ paddingLeft: 20, paddingRight: 20 }}>
+        <Navbar variant='dark' sticky="top" expand="lg" style={{ paddingLeft: 20, paddingRight: 20 }}>
             <Navbar.Brand href="/">RL</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">

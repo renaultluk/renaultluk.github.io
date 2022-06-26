@@ -41,13 +41,13 @@ export default function Home() {
           // backgroundColor: `rgba(255, 255, 255, ${offsetY / screenHeight})`,
         }}>
           <h1 className={styles.title}>
-            Hi, I'm <a href="">Renault</a>.
+            Hi, I'm <a href="" style={{ color: "#E6BCCD" }}>Renault</a>.
             <p className={styles.description}>
               I'm a 
               <code className={styles.code}>
                 <Typed 
                   strings={[
-                    'Web Developer',
+                    'Software Developer',
                     'Product Designer',
                     'Embedded Systems Engineer',
                     'Graphic Designer',
