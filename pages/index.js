@@ -1,10 +1,28 @@
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
+import { Button } from 'react-bootstrap'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+import Typed from 'react-typed'
 
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const [offsetY, setOffsetY] = useState(0);
+  // let screenHeight = 0;
+
+  const handleScroll = () => {
+    setOffsetY(window.pageYOffset);
+  }
+
+  useEffect(() => {
+    // screenHeight = window.innerHeight;
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -15,19 +33,95 @@ export default function Home() {
 
       {/* <main className={styles.main}> */}
       <main>
+        
+        <div className={styles.banner} style={{ 
+          // transform: `translateY(-${offsetY * 1.2}px)`,
+          height: `${500}px`,
+          // backgroundColor: `rgba(0, 0, 0, ${offsetY / 500})`,
+          // backgroundColor: `rgba(255, 255, 255, ${offsetY / screenHeight})`,
+        }}>
+          <h1 className={styles.title}>
+            Hi, I'm <a href="" style={{ color: "#E6BCCD" }}>Renault</a>.
+            <p className={styles.description}>
+              I'm a 
+              <code className={styles.code}>
+                <Typed 
+                  strings={[
+                    'Software Developer',
+                    'Product Designer',
+                    'Embedded Systems Engineer',
+                    'Graphic Designer',
+                  ]}
+                  typeSpeed={120}
+                  backSpeed={60}
+                  loop
+                />
+              </code>
+              .
+            </p>
+          </h1>
+        </div>
 
-        <Parallax pages={2}>
-          <ParallaxLayer>
+        <div className={styles.banner} style={{ 
+          transform: `translateY(-${offsetY * 1.2}px)`,
+          height: `${500}px`,
+          // backgroundColor: `rgba(0, 0, 0, ${offsetY / 500})`,
+          // backgroundColor: `rgba(255, 255, 255, ${offsetY / screenHeight})`,
+        }}>
+          <h2>About Me</h2>
+          <p>Check out more about my experience and achievements.</p>
+          <Button variant="primary" href="/about" style={{ width: "fit-content" }}>
+            More About Me &rarr;
+          </Button>
+        </div>
+
+        <div className={styles.banner} style={{
+          transform: `translateY(-${offsetY * 0.5}px)`,
+          height: `${500}px`,
+        }}>
+          <h2>Projects</h2>
+          <p>Check out some of my projects.</p>
+          <Button variant="primary" href="/work" style={{ width: "fit-content" }}>
+            Projects &rarr;
+          </Button>
+        </div>
+
+        <div className={styles.banner} style={{
+          transform: `translateY(-${offsetY * 0.7}px)`,
+          height: `${500}px`,
+        }}>
+          <h2>Contact Me</h2>
+          <p>Find me through different channels!</p>
+          <Button variant="primary" href="/work" style={{ width: "fit-content" }}>
+            Contact &rarr;
+          </Button>
+        </div>
+        
+        {/* <Parallax pages={2}>
+          <ParallaxLayer offset={0} speed={1}>
             <h1 className={styles.title}>
               Hi, I'm <a href="">Renault</a>.
               <p className={styles.description}>
-                <code className={styles.code}>Web Developer</code>
-                , Product Designer, Embedded Systems Engineer, Graphic Designer, and Digital Marketer.
+                I'm a 
+                <code className={styles.code}>
+                  <Typed 
+                    strings={[
+                      'Web Developer',
+                      'Product Designer',
+                      'Embedded Systems Engineer',
+                      'Graphic Designer',
+                    ]}
+                    typeSpeed={120}
+                    backSpeed={60}
+                    loop
+                  />
+                </code>
+                .
               </p>
             </h1>
 
-          </ParallaxLayer>
-          <ParallaxLayer offset={0.5} speed={2}>
+          </ParallaxLayer> */}
+          {/* <ParallaxLayer offset={0.5} speed={2}>
             <div className={styles.grid}>
               <a href="https://nextjs.org/docs" className={styles.card}>
                 <h2>Documentation &rarr;</h2>
@@ -58,7 +152,7 @@ export default function Home() {
               </a>
             </div>
           </ParallaxLayer>
-        </Parallax>
+        </Parallax> */}
       </main>
 
 
