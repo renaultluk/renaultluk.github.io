@@ -7,8 +7,9 @@ const PostTag = (props) => {
            <style type="text/css">
                 {`
                     .btn-tag {
-                        background-color: #E6BCCD;
-                        color: #7E52A0;
+                        border: 2.5px solid #E6BCCD;
+                        // background-color: #E6BCCD;
+                        color: #E6BCCD;
                         border-radius: 2rem;
                         margin: 0.25rem;
                         font-size: 0.8em;
