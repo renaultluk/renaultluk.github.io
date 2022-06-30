@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { Container, Card, Row, Col } from "react-bootstrap";
 // import { getPostsMetaData } from "../../utils/getPostsData";
 import getPosts from "../../scripts/fileSystem";
+import PostTag from '../../components/PostTag';
 
 import { useRouter } from "next/router";
 
@@ -30,6 +31,15 @@ const WorkHome = ({ posts }) => {
                                         <Card.Body>
                                             <Card.Title>{post.data.title}</Card.Title>
                                             <Card.Text>{post.data.description}</Card.Text>
+                                            {
+                                                post.data.tags && (
+                                                    post.data.tags.split(',').map((value, index) => {
+                                                        return (
+                                                            <PostTag tag={value} />
+                                                        );
+                                                    })
+                                                )
+                                            }
                                         </Card.Body>
                                     </Card>
                                 </Col>
