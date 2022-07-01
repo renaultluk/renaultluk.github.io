@@ -17,7 +17,7 @@ const WorkHome = ({ posts }) => {
             </Head>
 
             <Container>
-                <h1>My Projects</h1>
+                <h1>My Work</h1>
                 <Container fluid>
                     <Row className="justify-content-md-center">
                         {posts.map((post, index) => {
