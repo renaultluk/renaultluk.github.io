@@ -1,0 +1,24 @@
+.btnContainer {
+    padding: 10px;
+}
+
+.btnBody {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    height: 7em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.imgCover {
+    width: 3em;
+    height: 3em;
+}
+
+.txtBody {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
