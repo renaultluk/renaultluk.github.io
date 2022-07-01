@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import { Button } from 'react-bootstrap'
-import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+// import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+import { Parallax } from 'react-scroll-parallax'
 import Typed from 'react-typed'
 
 import styles from '../styles/Home.module.css'
@@ -62,23 +63,29 @@ export default function Home() {
           </h1>
         </div>
 
-        <div className={styles.banner} style={{ 
-          transform: `translateY(-${offsetY * 1.2}px)`,
-          height: `${500}px`,
-          // backgroundColor: `rgba(0, 0, 0, ${offsetY / 500})`,
-          // backgroundColor: `rgba(255, 255, 255, ${offsetY / screenHeight})`,
-        }}>
-          <h2>About Me</h2>
-          <p>Check out more about my experience and achievements.</p>
-          <Button variant="primary" href="/about" style={{ width: "fit-content" }}>
-            More About Me &rarr;
-          </Button>
-        </div>
+        <Parallax speed={30}>
+          <div className={styles.banner} 
+          style={{ 
+            // transform: `translateY(-${offsetY * 1.2}px)`,
+            height: `${500}px`,
+            // backgroundColor: `rgba(0, 0, 0, ${offsetY / 500})`,
+            // backgroundColor: `rgba(255, 255, 255, ${offsetY / screenHeight})`,
+          }}
+          >
+            <h2>About Me</h2>
+            <p>Check out more about my experience and achievements.</p>
+            <Button variant="primary" href="/about" style={{ width: "fit-content" }}>
+              More About Me &rarr;
+            </Button>
+          </div>
+        </Parallax>
 
-        <div className={styles.banner} style={{
-          transform: `translateY(-${offsetY * 0.5}px)`,
+        <div className={styles.banner} 
+        style={{
+          // transform: `translateY(-${offsetY * 0.5}px)`,
           height: `${500}px`,
-        }}>
+        }}
+        >
           <h2>Projects</h2>
           <p>Check out some of my projects.</p>
           <Button variant="primary" href="/work" style={{ width: "fit-content" }}>
@@ -86,10 +93,12 @@ export default function Home() {
           </Button>
         </div>
 
-        <div className={styles.banner} style={{
-          transform: `translateY(-${offsetY * 0.7}px)`,
+        <div className={styles.banner} 
+        style={{
+          // transform: `translateY(-${offsetY * 0.7}px)`,
           height: `${500}px`,
-        }}>
+        }}
+        >
           <h2>Contact Me</h2>
           <p>Find me through different channels!</p>
           <Button variant="primary" href="/work" style={{ width: "fit-content" }}>
