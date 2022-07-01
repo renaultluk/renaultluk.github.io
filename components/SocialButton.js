@@ -11,7 +11,7 @@ const SocialButton = (props) => {
         <Col xs={12} sm={6} className={styles.btnContainer}>
             <Container className={styles.btnBody} onClick={redirect}>
                 <Image 
-                    src="/WhatsApp.svg"
+                    src={props.image}
                     width={80}
                     height={80}
                     layout="intrinsic"
