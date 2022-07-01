@@ -12,6 +12,7 @@ const PostTag = (props) => {
                         color: #E6BCCD;
                         border-radius: 2rem;
                         margin: 0.25rem;
+                        margin-left: 0;
                         font-size: 0.8em;
                     }
                 `}
