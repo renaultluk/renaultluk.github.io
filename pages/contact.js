@@ -11,13 +11,13 @@ const Contact = () => {
 
             <Container>
                 <h1>Contact Me</h1>
-                <span>Work</span>
+                <h4>Work</h4>
                     <Row>
                         <SocialButton title="Github" info="https://github.com/renaultluk/" url="https://github.com/renaultluk/" />
                         <SocialButton title="LinkedIn" info="https://www.linkedin.com/in/renault-luk-54a9451bb/" url="https://www.linkedin.com/in/renault-luk-54a9451bb/" />
                         <SocialButton title="Fiverr" info="https://www.fiverr.com/renaultluk" url="https://www.fiverr.com/renaultluk" />
                     </Row>
-                <span>Socials</span>
+                <h4>Socials</h4>
                     <Row>
                         <SocialButton title="Instagram" info="renaultluk" url="https://www.instagram.com/renaultluk/" />
                         <SocialButton title="Whatsapp" info="+852 5116 4998" url="https://wa.me/85251164998" />

@@ -14,11 +14,13 @@ const SocialButton = (props) => {
                     src="/WhatsApp.svg"
                     width={80}
                     height={80}
+                    layout="intrinsic"
+                    className={styles.imgCover}
                 />
-                <Container className={styles.txtBody}>
+                <div className={styles.txtBody}>
                     <h3>{props.title}</h3>
                     <span>{props.info}</span>
-                </Container>
+                </div>
             </Container>
         </Col>
     );
