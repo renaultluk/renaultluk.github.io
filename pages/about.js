@@ -28,6 +28,10 @@ const About = () => {
             
             {/* <RotateIcon /> */}
 
+            <div>
+                Hi! My name is Renault, and I am a Software Developer based in Hong Kong, armed with Embedded Systems Engineering, UI/UX Design, and Product Design skills. I’m a problem solver, a team player, and a curious and inquisitive learner.
+            </div>
+
             <Parallax
                 rotateX={[-90, 0, 'easeOutExpo']}
                 startScroll={0}
