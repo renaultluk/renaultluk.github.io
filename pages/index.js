@@ -50,7 +50,7 @@ export default function Home() {
                     'Software Developer',
                     'Product Designer',
                     'Embedded Systems Engineer',
-                    'Graphic Designer',
+                    'UI/UX Designer',
                   ]}
                   typeSpeed={120}
                   backSpeed={60}
