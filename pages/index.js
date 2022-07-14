@@ -131,23 +131,80 @@ export default function Home() {
               </p>
             </h1>
           </div>
-
-
-          <Parallax speed={30}>
-            <div className={styles.banner} 
-            style={{ 
-              // transform: `translateY(-${offsetY * 1.2}px)`,
-              height: `${500}px`,
-              // backgroundColor: `rgba(0, 0, 0, ${offsetY / 500})`,
-              // backgroundColor: `rgba(255, 255, 255, ${offsetY / screenHeight})`,
-            }}
+          
+          <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
+            <Parallax
+                rotateX={[-90, 0, 'easeOutExpo']}
+                startScroll={0}
+                endScroll={500}
             >
-              <h2>About Me</h2>
-              <p>Check out more about my experience and achievements.</p>
-              <Button variant="primary" href="/about" style={{ width: "fit-content" }}>
-                More About Me &rarr;
-              </Button>
-            </div>
+                <div style={{ 
+                  height: 500, 
+                  padding: 16,
+                  display: "flex",
+                  alignItems: "center",
+                }}>
+                  <span>
+                    Hi! My name is Renault, and I am a Software Developer based in Hong Kong, armed with Embedded Systems Engineering, UI/UX Design, and Product Design skills. I’m a problem solver, a team player, and a curious and inquisitive learner.
+                  </span>
+                </div>
+            </Parallax>
+
+            <div style={{ position: "relative" }}>
+              <Parallax
+                rotate={[0,360]}
+                style={{ 
+                  width: 150,
+                  height: 150,
+                  display: "flex",
+                  backgroundColor: "red",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                  {/* <img 
+                    src="/Profile.JPG" 
+                    width={100}
+                    height={100}
+                    layout="fill"
+                    style={{
+                      borderRadius: 100,
+                      objectFit: "cover",
+                    }} 
+                  /> */}
+                    {/* <div 
+                      style={{ 
+                        backgroundColor: "green",
+                        width:30,
+                        height: 30,
+                      }}
+                    /> */}
+              </Parallax>
+              <img 
+                    src="/Profile.JPG" 
+                    width={100}
+                    height={100}
+                    style={{
+                      borderRadius: 100,
+                      objectFit: "cover",
+                      position: "absolute",
+                      top: 25,
+                      left: 25,
+                    }} 
+                  />
+              </div>
+          </div>
+
+
+          <Parallax
+              rotateX={[-90, 0, 'easeOutExpo']}
+              startScroll={500}
+              endScroll={1000}
+          >
+              <div style={{ height: 500, padding: 16 }}>
+                  <h4>Software Development</h4>
+                  <span>An aspiring full stack developer at heart, my focus is on creating frontends on websites, desktop and mobile applications; and have experience with devising backend logic and database management; as well as adding machine learning.</span>
+              </div>
           </Parallax>
 
           <div className={styles.banner} 
