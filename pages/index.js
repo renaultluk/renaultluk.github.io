@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Button } from 'react-bootstrap'
+import { Button, Col } from 'react-bootstrap'
 // import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax'
 import Typed from 'react-typed'
 
 import styles from '../styles/Home.module.css'
+import Divider from '../components/Divider'
 
 const HeadBanner = () => {
   const background = {
@@ -102,7 +103,7 @@ export default function Home() {
       {/* <HeadBanner /> */}
       <div className={styles.container}>
         {/* <main className={styles.main}> */}
-        <main style={{ width: "100%" }}>
+        <main style={{ width: "80%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
           
           <div className={styles.banner} style={{ 
             // transform: `translateY(-${offsetY * 1.2}px)`,
@@ -132,68 +133,59 @@ export default function Home() {
             </h1>
           </div>
           
-          <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
-            <Parallax
-                rotateX={[-90, 0, 'easeOutExpo']}
-                startScroll={0}
-                endScroll={500}
-            >
-                <div style={{ 
-                  height: 500, 
-                  padding: 16,
-                  display: "flex",
-                  alignItems: "center",
-                }}>
-                  <span>
-                    Hi! My name is Renault, and I am a Software Developer based in Hong Kong, armed with Embedded Systems Engineering, UI/UX Design, and Product Design skills. I’m a problem solver, a team player, and a curious and inquisitive learner.
-                  </span>
-                </div>
-            </Parallax>
+            <div className="d-flex flex-column flex-sm-row-reverse align-items-center">
 
-            <div style={{ position: "relative" }}>
+              <div style={{ 
+                position: "relative", 
+                // left: "50%",
+              }}>
+                <Parallax
+                  rotate={[0,360]}
+                  // startScroll={200}
+                  endScroll={1000}
+                  style={{ 
+                    width: 200,
+                    height: 200,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                    <img
+                      src="/profile_ring.svg" 
+                      style={{ flex: 1 }}
+                    />
+                </Parallax>
+                <img 
+                      src="/Profile.JPG" 
+                      width={150}
+                      height={150}
+                      style={{
+                        borderRadius: 150,
+                        objectFit: "cover",
+                        position: "absolute",
+                        top: 25,
+                        left: 25,
+                      }} 
+                    />
+                </div>
               <Parallax
-                rotate={[0,360]}
-                style={{ 
-                  width: 150,
-                  height: 150,
-                  display: "flex",
-                  backgroundColor: "red",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
+                  rotateX={[-90, 0, 'easeOutExpo']}
+                  startScroll={200}
+                  endScroll={700}
               >
-                  {/* <img 
-                    src="/Profile.JPG" 
-                    width={100}
-                    height={100}
-                    layout="fill"
-                    style={{
-                      borderRadius: 100,
-                      objectFit: "cover",
-                    }} 
-                  /> */}
-                    {/* <div 
-                      style={{ 
-                        backgroundColor: "green",
-                        width:30,
-                        height: 30,
-                      }}
-                    /> */}
+                  <Col style={{ 
+                    padding: 16, 
+                    // width: "50%" 
+                  }}
+                    xs={12} sm={8}
+                  >
+                      <h4>About Me</h4>
+                      <span>Hi! My name is Renault, and I am a Software Developer based in Hong Kong, armed with Embedded Systems Engineering, UI/UX Design, and Product Design skills. I’m a problem solver, a team player, and a curious and inquisitive learner.</span>
+                  </Col>
               </Parallax>
-              <img 
-                    src="/Profile.JPG" 
-                    width={100}
-                    height={100}
-                    style={{
-                      borderRadius: 100,
-                      objectFit: "cover",
-                      position: "absolute",
-                      top: 25,
-                      left: 25,
-                    }} 
-                  />
-              </div>
-          </div>
+            </div>
+
 
 
           <Parallax
