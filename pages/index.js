@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Button, Col } from 'react-bootstrap'
 // import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax'
@@ -8,6 +9,7 @@ import Typed from 'react-typed'
 
 import styles from '../styles/Home.module.css'
 import Divider from '../components/Divider'
+import WordCloud from '../components/WordCloud'
 
 const HeadBanner = () => {
   const background = {
@@ -31,7 +33,7 @@ const HeadBanner = () => {
         // backgroundColor: `rgba(255, 255, 255, ${offsetY / screenHeight})`,
       }}>
         <h1 className={styles.title}>
-          Hi, I'm <a href="" style={{ color: "#E6BCCD" }}>Renault</a>.
+          Hi, I'm <Link href="/contact" style={{ color: "#E6BCCD" }}>Renault</Link>.
           <p className={styles.description}>
             I'm a 
             <code className={styles.code}>
@@ -133,7 +135,7 @@ export default function Home() {
             </h1>
           </div>
           
-            <div className="d-flex flex-column flex-sm-row-reverse align-items-center">
+            <div className="d-flex flex-column flex-sm-row-reverse align-items-center justify-content-around">
 
               <div style={{ 
                 position: "relative", 
@@ -186,18 +188,39 @@ export default function Home() {
               </Parallax>
             </div>
 
+          <div className="d-flex flex-column flex-sm-row align-items-center" style={{ marginTop: 20, marginBottom: 20, }}>
+            <WordCloud 
+              wordList={[
+                "React.js",
+                "Next.js",
+                "React Native",
+                "CSS",
+                "Bootstrap",
+                "Electron",
+                "Firebase",
+                "Python",
+                "Pandas",
+                "Tensorflow",
+                "C++",
+                "Java",
+                "Kotlin",
+                "XML",
+                "REST",
+                "Github",
+              ]}
+            />
 
-
-          <Parallax
-              rotateX={[-90, 0, 'easeOutExpo']}
-              startScroll={500}
-              endScroll={1000}
-          >
-              <div style={{ height: 500, padding: 16 }}>
-                  <h4>Software Development</h4>
-                  <span>An aspiring full stack developer at heart, my focus is on creating frontends on websites, desktop and mobile applications; and have experience with devising backend logic and database management; as well as adding machine learning.</span>
-              </div>
-          </Parallax>
+            <Parallax
+                rotateX={[-90, 0, 'easeOutExpo']}
+                startScroll={500}
+                endScroll={1000}
+            >
+                <div style={{ padding: 16 }}>
+                    <h4>Software Development</h4>
+                    <span>An aspiring full stack developer at heart, my focus is on creating frontends on websites, desktop and mobile applications; and have experience with devising backend logic and database management; as well as adding machine learning.</span>
+                </div>
+            </Parallax>
+          </div>
 
           <div className={styles.banner} 
           style={{
@@ -224,78 +247,7 @@ export default function Home() {
               Contact &rarr;
             </Button>
           </div>
-          
-          {/* <Parallax pages={2}>
-            <ParallaxLayer offset={0} speed={1}>
-              <h1 className={styles.title}>
-                Hi, I'm <a href="">Renault</a>.
-                <p className={styles.description}>
-                  I'm a 
-                  <code className={styles.code}>
-                    <Typed 
-                      strings={[
-                        'Web Developer',
-                        'Product Designer',
-                        'Embedded Systems Engineer',
-                        'Graphic Designer',
-                      ]}
-                      typeSpeed={120}
-                      backSpeed={60}
-                      loop
-                    />
-                  </code>
-                  .
-                </p>
-              </h1>
-
-            </ParallaxLayer> */}
-            {/* <ParallaxLayer offset={0.5} speed={2}>
-              <div className={styles.grid}>
-                <a href="https://nextjs.org/docs" className={styles.card}>
-                  <h2>Documentation &rarr;</h2>
-                  <p>Find in-depth information about Next.js features and API.</p>
-                </a>
-
-                <a href="https://nextjs.org/learn" className={styles.card}>
-                  <h2>Learn &rarr;</h2>
-                  <p>Learn about Next.js in an interactive course with quizzes!</p>
-                </a>
-
-                <a
-                  href="https://github.com/vercel/next.js/tree/canary/examples"
-                  className={styles.card}
-                >
-                  <h2>Examples &rarr;</h2>
-                  <p>Discover and deploy boilerplate example Next.js projects.</p>
-                </a>
-
-                <a
-                  href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                  className={styles.card}
-                >
-                  <h2>Deploy &rarr;</h2>
-                  <p>
-                    Instantly deploy your Next.js site to a public URL with Vercel.
-                  </p>
-                </a>
-              </div>
-            </ParallaxLayer>
-          </Parallax> */}
         </main>
-
-
-        {/* <footer className={styles.footer}>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Powered by{' '}
-            <span className={styles.logo}>
-              <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-            </span>
-          </a>
-        </footer> */}
       </div>
     </>
   )
