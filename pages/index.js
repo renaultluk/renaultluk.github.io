@@ -222,7 +222,40 @@ export default function Home() {
             </Parallax>
           </div>
 
-          <div className={styles.banner} 
+          <Parallax
+                rotateX={[-90, 0, 'easeOutExpo']}
+                startScroll={500}
+                endScroll={1000}
+            >
+                <div style={{ padding: 16 }}>
+                    <h4>UI/UX Design</h4>
+                    <span>Using interaction design principles, I create designs that minimise interaction cost, and account for product’s context of usage for the best user experience.</span>
+                </div>
+            </Parallax>
+
+            <Parallax
+                rotateX={[-90, 0, 'easeOutExpo']}
+                startScroll={500}
+                endScroll={1000}
+            >
+                <div style={{ padding: 16 }}>
+                    <h4>Embedded Systems Engineering</h4>
+                    <span>From sourcing components, to designing circuits and PCBs, and developing embedded software, I am interested in creating embedded devices and IoT systems.</span>
+                </div>
+            </Parallax>
+
+            <Parallax
+                rotateX={[-90, 0, 'easeOutExpo']}
+                startScroll={500}
+                endScroll={1000}
+            >
+                <div style={{ padding: 16 }}>
+                    <h4>Product Design</h4>
+                    <span>Armed with design thinking skills, I enjoy identifying existing problems and user needs, creating concept sketches, and bringing the product into fruition with the aid of CAD, as well as my technical knowledge with software, hardware and design principles.</span>
+                </div>
+            </Parallax>
+
+          {/* <div className={styles.banner} 
           style={{
             // transform: `translateY(-${offsetY * 0.5}px)`,
             height: `${500}px`,
@@ -246,7 +279,7 @@ export default function Home() {
             <Button variant="primary" href="/work" style={{ width: "fit-content" }}>
               Contact &rarr;
             </Button>
-          </div>
+          </div> */}
         </main>
       </div>
     </>
