@@ -5,7 +5,7 @@ import { useFrame } from '@react-three/fiber';
 
 const FloatWord = ({children, ...props}) => {
     const color = new THREE.Color();
-    const fontProps= { font: "/Eras_Bold_ITC.woff", fontSize: 2.5 }
+    const fontProps= { font: "/Eras_Bold_ITC.woff", fontSize: 3 }
     const ref = useRef();
     const [hovered, setHovered] = useState(false);
     const over = (e) => (e.stopPropagation(), setHovered(true));

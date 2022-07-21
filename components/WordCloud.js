@@ -4,7 +4,7 @@ import { Canvas } from '@react-three/fiber';
 import { TrackballControls } from '@react-three/drei';
 import FloatWord from './FloatWord';
 
-const WordCloud = ({ count = 4, radius = 15, wordList = [] }) => {
+const WordCloud = ({ count = 4, radius = 20, wordList = [] }) => {
     const words = useMemo(() => {
         const temp = [];
         const spherical = new THREE.Spherical();

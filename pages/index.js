@@ -222,6 +222,32 @@ export default function Home() {
             </Parallax>
           </div>
 
+          <div className="d-flex flex-column flex-sm-row-reverse align-items-center">
+
+          <div
+            style={{
+              position: "relative",
+              overflow: "hidden",
+              height: 258,
+            }}
+          >
+              <Parallax
+                translateY={[200, 0]}
+                startScroll={0}
+                endScroll={700}
+              >
+                <div
+                  style={{
+                    width: 200,
+                    height: 250,
+                    borderRadius: 8,
+                    borderColor: "#BBBBBD",
+                    borderWidth: 1,
+                    backgroundColor: "rgba(255,255,255,0.15)",
+                  }}
+                />
+              </Parallax>
+          </div>
           <Parallax
                 rotateX={[-90, 0, 'easeOutExpo']}
                 startScroll={500}
@@ -232,6 +258,7 @@ export default function Home() {
                     <span>Using interaction design principles, I create designs that minimise interaction cost, and account for product’s context of usage for the best user experience.</span>
                 </div>
             </Parallax>
+          </div>
 
             <Parallax
                 rotateX={[-90, 0, 'easeOutExpo']}
