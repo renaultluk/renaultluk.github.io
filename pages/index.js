@@ -148,9 +148,11 @@ export default function Home() {
                   style={{ 
                     width: 200,
                     height: 200,
+                    borderRadius: 200,
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
+                    // backgroundColor: "red",
                   }}
                 >
                     <img
@@ -215,20 +217,20 @@ export default function Home() {
                 startScroll={500}
                 endScroll={1000}
             >
-                <div style={{ padding: 16 }}>
+                <Col style={{ padding: 16 }}>
                     <h4>Software Development</h4>
                     <span>An aspiring full stack developer at heart, my focus is on creating frontends on websites, desktop and mobile applications; and have experience with devising backend logic and database management; as well as adding machine learning.</span>
-                </div>
+                </Col>
             </Parallax>
           </div>
 
-          <div className="d-flex flex-column flex-sm-row-reverse align-items-center">
+          <div className="d-flex flex-column flex-sm-row-reverse align-items-center justify-content-between">
 
           <div
             style={{
               position: "relative",
               overflow: "hidden",
-              height: 258,
+              height: 220,
             }}
           >
               <Parallax
@@ -239,7 +241,7 @@ export default function Home() {
                 <div
                   style={{
                     width: 200,
-                    height: 250,
+                    height: 200,
                     borderRadius: 8,
                     borderColor: "#BBBBBD",
                     borderWidth: 1,
@@ -247,17 +249,97 @@ export default function Home() {
                   }}
                 />
               </Parallax>
+              <Parallax
+                scale={[2, 1]}
+                opacity={[0.2, 1]}
+                startScroll={0}
+                endScroll={700}
+              >
+                <div 
+                  style={{
+                    width: 75,
+                    height: 100,
+                    borderRadius: 8,
+                    borderColor: "#BBBBBD",
+                    borderWidth: 1,
+                    backgroundColor: "rgba(255,255,255,0.15)",
+                    position: "absolute",
+                    top: -180,
+                    left: 20,
+                  }}
+                />
+              </Parallax>
+              <Parallax
+                translateY={[0, 100]}
+                opacity={[0.2, 1]}
+                startScroll={0}
+                endScroll={700}
+              >
+                <div 
+                  style={{
+                    width: 75,
+                    height: 50,
+                    borderRadius: 8,
+                    borderColor: "#BBBBBD",
+                    borderWidth: 1,
+                    backgroundColor: "rgba(255,255,255,0.15)",
+                    position: "absolute",
+                    top: -180,
+                    right: 20,
+                  }}
+                />
+              </Parallax>
+              <Parallax
+                scale={[1.5, 1]}
+                opacity={[0.2, 1]}
+                startScroll={0}
+                endScroll={700}
+              >
+                <div 
+                  style={{
+                    width: 75,
+                    height: 100,
+                    borderRadius: 8,
+                    borderColor: "#BBBBBD",
+                    borderWidth: 1,
+                    backgroundColor: "rgba(255,255,255,0.15)",
+                    position: "absolute",
+                    top: -120,
+                    right: 20,
+                  }}
+                />
+              </Parallax>
+              <Parallax
+                translateX={[-100, 0]}
+                opacity={[0.2, 1]}
+                startScroll={0}
+                endScroll={700}
+              >
+                <div 
+                  style={{
+                    width: 75,
+                    height: 50,
+                    borderRadius: 8,
+                    borderColor: "#BBBBBD",
+                    borderWidth: 1,
+                    backgroundColor: "rgba(255,255,255,0.15)",
+                    position: "absolute",
+                    top: -70,
+                    left: 20,
+                  }}
+                />
+              </Parallax>
           </div>
-          <Parallax
-                rotateX={[-90, 0, 'easeOutExpo']}
-                startScroll={500}
-                endScroll={1000}
-            >
-                <div style={{ padding: 16 }}>
-                    <h4>UI/UX Design</h4>
-                    <span>Using interaction design principles, I create designs that minimise interaction cost, and account for product’s context of usage for the best user experience.</span>
-                </div>
-            </Parallax>
+          <Col style={{ padding: 16 }} xs={12} sm={8}>
+            <Parallax
+                  rotateX={[-90, 0, 'easeOutExpo']}
+                  startScroll={500}
+                  endScroll={1000}
+              >
+                      <h4>UI/UX Design</h4>
+                      <span>Using interaction design principles, I create designs that minimise interaction cost, and account for product’s context of usage for the best user experience.</span>
+              </Parallax>
+          </Col>
           </div>
 
             <Parallax
@@ -265,10 +347,10 @@ export default function Home() {
                 startScroll={500}
                 endScroll={1000}
             >
-                <div style={{ padding: 16 }}>
+                <Col style={{ padding: 16 }} xs={12} sm={8}>
                     <h4>Embedded Systems Engineering</h4>
                     <span>From sourcing components, to designing circuits and PCBs, and developing embedded software, I am interested in creating embedded devices and IoT systems.</span>
-                </div>
+                </Col>
             </Parallax>
 
             <Parallax
@@ -276,10 +358,10 @@ export default function Home() {
                 startScroll={500}
                 endScroll={1000}
             >
-                <div style={{ padding: 16 }}>
+                <Col style={{ padding: 16 }} xs={12} sm={8}>
                     <h4>Product Design</h4>
                     <span>Armed with design thinking skills, I enjoy identifying existing problems and user needs, creating concept sketches, and bringing the product into fruition with the aid of CAD, as well as my technical knowledge with software, hardware and design principles.</span>
-                </div>
+                </Col>
             </Parallax>
 
           {/* <div className={styles.banner} 
@@ -307,6 +389,7 @@ export default function Home() {
               Contact &rarr;
             </Button>
           </div> */}
+          <div style={{ height: 1000 }} />
         </main>
       </div>
     </>
