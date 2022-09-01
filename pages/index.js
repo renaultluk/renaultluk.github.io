@@ -6,6 +6,7 @@ import { Button, Col } from 'react-bootstrap'
 // import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax'
 import Typed from 'react-typed'
+import Header from "../components/Header"
 
 import styles from '../styles/Home.module.css'
 import Divider from '../components/Divider'
@@ -103,16 +104,24 @@ export default function Home() {
       </Head>
 
       {/* <HeadBanner /> */}
+      <Header />
       <div className={styles.container}>
         {/* <main className={styles.main}> */}
-        <main style={{ width: "80%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
-          
           <div className={styles.banner} style={{ 
             // transform: `translateY(-${offsetY * 1.2}px)`,
             height: `${500}px`,
+            width: "100%",
             // backgroundColor: `rgba(0, 0, 0, ${offsetY / 500})`,
             // backgroundColor: `rgba(255, 255, 255, ${offsetY / screenHeight})`,
           }}>
+            {/* <img 
+              src="/sky_banner.jpg"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+              }}
+            /> */}
             <h1 className={styles.title}>
               Hi, I'm <a href="" style={{ color: "#E6BCCD" }}>Renault</a>.
               <p className={styles.description}>
@@ -134,6 +143,8 @@ export default function Home() {
               </p>
             </h1>
           </div>
+        <main style={{ width: "80%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+          
           
             <div className="d-flex flex-column flex-sm-row-reverse align-items-center justify-content-around">
 
@@ -173,11 +184,11 @@ export default function Home() {
                       }} 
                     />
                 </div>
-              <Parallax
+              {/* <Parallax
                   rotateX={[-90, 0, 'easeOutExpo']}
                   startScroll={200}
                   endScroll={700}
-              >
+              > */}
                   <Col style={{ 
                     padding: 16, 
                     // width: "50%" 
@@ -186,8 +197,26 @@ export default function Home() {
                   >
                       <h4>About Me</h4>
                       <span>Hi! My name is Renault, and I am a Software Developer based in Hong Kong, armed with Embedded Systems Engineering, UI/UX Design, and Product Design skills. I’m a problem solver, a team player, and a curious and inquisitive learner.</span>
+                      <style type="text/css">
+                        {`
+                          .btn-general {
+                            background-color: #E6BCCD;
+                          }
+                        `}
+                      </style>
+                      <Button 
+                        href='/test.pdf'
+                        target="_blank"
+                        variant='general'
+                        style={{
+                          display: "block",
+                          marginTop: 12,
+                        }}
+                      >
+                        See My Resume &rarr;
+                      </Button>
                   </Col>
-              </Parallax>
+              {/* </Parallax> */}
             </div>
 
           <div className="d-flex flex-column flex-sm-row align-items-center" style={{ marginTop: 20, marginBottom: 20, }}>
@@ -213,9 +242,9 @@ export default function Home() {
             />
 
             <Parallax
-                rotateX={[-90, 0, 'easeOutExpo']}
-                startScroll={500}
-                endScroll={1000}
+                // rotateX={[-90, 0, 'easeOutExpo']}
+                // startScroll={500}
+                // endScroll={1000}
             >
                 <Col style={{ padding: 16 }}>
                     <h4>Software Development</h4>
@@ -331,65 +360,41 @@ export default function Home() {
               </Parallax>
           </div>
           <Col style={{ padding: 16 }} xs={12} sm={8}>
-            <Parallax
+            {/* <Parallax
                   rotateX={[-90, 0, 'easeOutExpo']}
                   startScroll={500}
                   endScroll={1000}
-              >
+              > */}
                       <h4>UI/UX Design</h4>
                       <span>Using interaction design principles, I create designs that minimise interaction cost, and account for product’s context of usage for the best user experience.</span>
-              </Parallax>
+              {/* </Parallax> */}
           </Col>
           </div>
 
-            <Parallax
+            {/* <Parallax
                 rotateX={[-90, 0, 'easeOutExpo']}
                 startScroll={500}
                 endScroll={1000}
-            >
+            > */}
                 <Col style={{ padding: 16 }} xs={12} sm={8}>
                     <h4>Embedded Systems Engineering</h4>
                     <span>From sourcing components, to designing circuits and PCBs, and developing embedded software, I am interested in creating embedded devices and IoT systems.</span>
                 </Col>
-            </Parallax>
+            {/* </Parallax> */}
 
-            <Parallax
+            {/* <Parallax
                 rotateX={[-90, 0, 'easeOutExpo']}
                 startScroll={500}
                 endScroll={1000}
-            >
+            > */}
                 <Col style={{ padding: 16 }} xs={12} sm={8}>
                     <h4>Product Design</h4>
                     <span>Armed with design thinking skills, I enjoy identifying existing problems and user needs, creating concept sketches, and bringing the product into fruition with the aid of CAD, as well as my technical knowledge with software, hardware and design principles.</span>
                 </Col>
-            </Parallax>
+            {/* </Parallax> */}
 
-          {/* <div className={styles.banner} 
-          style={{
-            // transform: `translateY(-${offsetY * 0.5}px)`,
-            height: `${500}px`,
-          }}
-          >
-            <h2>Projects</h2>
-            <p>Check out some of my projects.</p>
-            <Button variant="primary" href="/work" style={{ width: "fit-content" }}>
-              Projects &rarr;
-            </Button>
-          </div>
 
-          <div className={styles.banner} 
-          style={{
-            // transform: `translateY(-${offsetY * 0.7}px)`,
-            height: `${500}px`,
-          }}
-          >
-            <h2>Contact Me</h2>
-            <p>Find me through different channels!</p>
-            <Button variant="primary" href="/work" style={{ width: "fit-content" }}>
-              Contact &rarr;
-            </Button>
-          </div> */}
-          <div style={{ height: 1000 }} />
+          {/* <div style={{ height: 1000 }} /> */}
         </main>
       </div>
     </>

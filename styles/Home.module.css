@@ -79,11 +79,14 @@
 .banner {
   display: flex;
   flex-direction: column;
+  position: relative;
   /* align-items: center; */
   justify-content: center;
   flex-wrap: wrap;
   /* max-width: 800px; */
   width: 100%;
+  /* background-image: url("/sky_banner.jpg"); */
+  background-position: 50% 86%;
 }
 
 .card {

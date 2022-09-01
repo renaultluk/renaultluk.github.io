@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { Container, Row } from 'react-bootstrap';
+import Header from '../components/Header';
 import SocialButton from '../components/SocialButton';
 
 const Contact = () => {
@@ -9,6 +10,7 @@ const Contact = () => {
                 <title>Contact Me | Renault Luk</title>
             </Head>
 
+            <Header />
             <Container>
                 <h1>Contact Me</h1>
                 <h4>Work</h4>

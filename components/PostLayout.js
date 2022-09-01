@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Container } from 'react-bootstrap';
 
 import styles from '../styles/PostStyles.module.css';
+import Header from './Header';
 
 const PostLayout = ({ children, title, slug, description, thumbnail, finishDate }) => {
     return (
@@ -11,6 +12,7 @@ const PostLayout = ({ children, title, slug, description, thumbnail, finishDate 
                 <title>{title} | Renault Luk</title>
             </Head>
             
+            <Header />
             <Container sm={5}>
                 <main className={styles.postMain}>
                     <h1 className={styles.postTitle}>{title}</h1>

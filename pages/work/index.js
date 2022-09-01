@@ -4,6 +4,7 @@ import { Container, Card, Row, Col } from "react-bootstrap";
 import getPosts from "../../scripts/fileSystem";
 import styles from '../../styles/WorkIndex.module.css'
 import PostTag from '../../components/PostTag';
+import Header from "../../components/Header"
 
 import { useRouter } from "next/router";
 
@@ -16,6 +17,7 @@ const WorkHome = ({ posts }) => {
                 <title>My Work | Renault Luk</title>
             </Head>
 
+            <Header />
             <Container>
                 <h1>My Work</h1>
                 <Container fluid>
