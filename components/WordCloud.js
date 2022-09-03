@@ -32,7 +32,7 @@ const WordCloud = ({ count = 4, radius = 20, wordList = [] }) => {
             </group>
             <OrbitControls 
                 autoRotate 
-                autoRotateSpeed={2.2} 
+                // autoRotateSpeed={2.2} 
                 enableZoom={false} 
             />
         </Canvas>

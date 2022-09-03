@@ -114,14 +114,6 @@ export default function Home() {
             // backgroundColor: `rgba(0, 0, 0, ${offsetY / 500})`,
             // backgroundColor: `rgba(255, 255, 255, ${offsetY / screenHeight})`,
           }}>
-            {/* <img 
-              src="/sky_banner.jpg"
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-              }}
-            /> */}
             <h1 className={styles.title}>
               Hi, I'm <a href="" style={{ color: "#E6BCCD" }}>Renault</a>.
               <p className={styles.description}>
@@ -132,7 +124,7 @@ export default function Home() {
                       'Software Developer',
                       'Product Designer',
                       'Embedded Systems Engineer',
-                      'Graphic Designer',
+                      'UI/UX Designer',
                     ]}
                     typeSpeed={120}
                     backSpeed={60}
@@ -143,10 +135,17 @@ export default function Home() {
               </p>
             </h1>
           </div>
-        <main style={{ width: "80%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+        <main style={{ width: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
           
           
-            <div className="d-flex flex-column flex-sm-row-reverse align-items-center justify-content-around">
+            <div 
+              className="d-flex flex-column flex-sm-row-reverse align-items-center justify-content-between"
+              style={{
+                marginTop: 20, 
+                marginBottom: 20, 
+                width: "80%",
+              }}
+            >
 
               <div style={{ 
                 position: "relative", 
@@ -204,22 +203,33 @@ export default function Home() {
                           }
                         `}
                       </style>
-                      <Button 
-                        href='/test.pdf'
-                        target="_blank"
-                        variant='general'
+                      <div
                         style={{
                           display: "block",
                           marginTop: 12,
                         }}
                       >
-                        See My Resume &rarr;
-                      </Button>
+                        <Button 
+                          href='/resume_test.pdf'
+                          target="_blank"
+                          variant='general'
+                          className='d-block d-sm-inline'
+                        >
+                          See My Resume &rarr;
+                        </Button>
+                      </div>
                   </Col>
               {/* </Parallax> */}
             </div>
 
-          <div className="d-flex flex-column flex-sm-row align-items-center" style={{ marginTop: 20, marginBottom: 20, }}>
+          <div 
+            className="d-flex flex-column flex-sm-row align-items-center justify-content-between" 
+              style={{ 
+                marginTop: 20, 
+                marginBottom: 20, 
+                width: "80%",
+              }}
+            >
             <WordCloud 
               wordList={[
                 "React.js",
@@ -241,19 +251,26 @@ export default function Home() {
               ]}
             />
 
-            <Parallax
-                // rotateX={[-90, 0, 'easeOutExpo']}
-                // startScroll={500}
-                // endScroll={1000}
-            >
-                <Col style={{ padding: 16 }}>
+            {/* <Parallax
+                rotateX={[-90, 0, 'easeOutExpo']}
+                startScroll={500}
+                endScroll={1000}
+            > */}
+                <Col style={{ padding: 16 }} xs={12} sm={8}>
                     <h4>Software Development</h4>
                     <span>An aspiring full stack developer at heart, my focus is on creating frontends on websites, desktop and mobile applications; and have experience with devising backend logic and database management; as well as adding machine learning.</span>
                 </Col>
-            </Parallax>
+            {/* </Parallax> */}
           </div>
 
-          <div className="d-flex flex-column flex-sm-row-reverse align-items-center justify-content-between">
+          <div 
+            className="d-flex flex-column flex-sm-row-reverse align-items-center justify-content-between"
+            style={{
+              width: "80%",
+              paddingTop: 20,
+              paddingBottom: 20,
+            }}
+          >
 
           <div
             style={{
@@ -371,17 +388,74 @@ export default function Home() {
           </Col>
           </div>
 
-            {/* <Parallax
-                rotateX={[-90, 0, 'easeOutExpo']}
-                startScroll={500}
-                endScroll={1000}
-            > */}
+          <div 
+            className="d-none d-sm-flex flex-row align-items-center justify-content-center"
+            style={{
+              backgroundImage: "linear-gradient(to left, #29274C 40%, rgba(0,0,0,0)), url(/pcb.png)",
+              backgroundPosition: "right",
+              height: 220,
+              width: "100%",
+            }}
+          >
+            <div style={{ 
+              display: "flex",
+              width: "80%", 
+              justifyContent: "flex-end",
+            }}>
+              {/* <Parallax
+                  rotateX={[-90, 0, 'easeOutExpo']}
+                  startScroll={500}
+                  endScroll={1000}
+              > */}
+                  <Col style={{ padding: 16 }} xs={12} sm={8}>
+                        <h4>Embedded Systems Engineering</h4>
+                        <span>From sourcing components, to designing circuits and PCBs, and developing embedded software, I am interested in creating embedded devices and IoT systems.</span>
+                  </Col>
+              {/* </Parallax> */}
+            </div>
+          </div>
+
+          <div 
+            className="d-flex d-sm-none flex-column align-items-center justify-content-end"
+            style={{
+              backgroundImage: "linear-gradient(to top, #29274C 40%, rgba(0,0,0,0)), url(/pcb.png)",
+              backgroundPosition: "center",
+              // height: 220,
+              paddingTop: 220,
+              paddingBottom: 20,
+            }}
+          >
+              <div style={{ 
+                display: "flex",
+                width: "80%", 
+                justifyContent: "flex-end",
+              }}>
+              {/* <Parallax
+                  rotateX={[-90, 0, 'easeOutExpo']}
+                  startScroll={500}
+                  endScroll={1000}
+              > */}
                 <Col style={{ padding: 16 }} xs={12} sm={8}>
                     <h4>Embedded Systems Engineering</h4>
                     <span>From sourcing components, to designing circuits and PCBs, and developing embedded software, I am interested in creating embedded devices and IoT systems.</span>
                 </Col>
             {/* </Parallax> */}
+              </div>
+          </div>
 
+          <div 
+            className="d-none d-sm-flex flex-row align-items-center justify-content-center"
+            style={{
+              backgroundImage: "linear-gradient(to right, #29274C 40%, rgba(0,0,0,0)), url(/sketches.jpeg)",
+              backgroundPosition: "bottom",
+              // backgroundSize: "contain",
+              height: 220,
+              width: "100%",
+            }}
+          >
+            <div style={{
+                width: "80%", 
+              }}>
             {/* <Parallax
                 rotateX={[-90, 0, 'easeOutExpo']}
                 startScroll={500}
@@ -392,6 +466,45 @@ export default function Home() {
                     <span>Armed with design thinking skills, I enjoy identifying existing problems and user needs, creating concept sketches, and bringing the product into fruition with the aid of CAD, as well as my technical knowledge with software, hardware and design principles.</span>
                 </Col>
             {/* </Parallax> */}
+              </div>
+          </div>
+          <div 
+            className="d-flex d-sm-none align-items-center justify-content-center"
+            style={{
+              backgroundImage: "linear-gradient(to top, #29274C 40%, rgba(0,0,0,0)), url(/sketches.jpeg)",
+              backgroundSize: "contain",
+              paddingTop: 220,
+              paddingBottom: 20,
+            }}
+          >
+            <div style={{
+                width: "80%", 
+            }}>
+            {/* <Parallax
+                rotateX={[-90, 0, 'easeOutExpo']}
+                startScroll={500}
+                endScroll={1000}
+            > */}
+                <Col style={{ padding: 16 }} xs={12} sm={8}>
+                    <h4>Product Design</h4>
+                    <span>Armed with design thinking skills, I enjoy identifying existing problems and user needs, creating concept sketches, and bringing the product into fruition with the aid of CAD, as well as my technical knowledge with software, hardware and design principles.</span>
+                </Col>
+            {/* </Parallax> */}
+            </div>
+          </div>
+
+          <div
+            style={{
+              height: 220,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <h4 style={{ textAlign: "center" }}>Want to know more?</h4>
+            <h1 style={{ textAlign: "center" }}><a href="work" style={{ color: "#E6BCCD" }}> See my work</a>!</h1>
+          </div>
 
 
           {/* <div style={{ height: 1000 }} /> */}
