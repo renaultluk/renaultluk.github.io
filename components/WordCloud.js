@@ -27,7 +27,7 @@ const WordCloud = ({ count = 4, radius = 20, wordList = [] }) => {
             <fog attach="fog" args={['#202025', 0, 80]} />
             <group>
                 {
-                    words.map(([pos, word], index) => <FloatWord key={index} position={pos} children={word} />)
+                    words.map(([pos, word], index) => <FloatWord key={index} position={pos}>{word}</FloatWord>)
                 }
             </group>
             <OrbitControls 

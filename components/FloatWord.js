@@ -20,7 +20,7 @@ const FloatWord = ({children, ...props}) => {
         ref.current.quaternion.copy(camera.quaternion)
         ref.current.material.color.lerp(color.set(hovered ? '#E6BCCD' : '#D295BF'), 0.1)
     })
-    return <Text ref={ref} onPointerOver={over} onPointerOut={out} {...props} {...fontProps} children={children} />
+    return <Text ref={ref} onPointerOver={over} onPointerOut={out} {...props} {...fontProps}>{children}</Text>
 }
 
 export default FloatWord;

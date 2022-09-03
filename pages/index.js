@@ -34,9 +34,9 @@ const HeadBanner = () => {
         // backgroundColor: `rgba(255, 255, 255, ${offsetY / screenHeight})`,
       }}>
         <h1 className={styles.title}>
-          Hi, I'm <Link href="/contact" style={{ color: "#E6BCCD" }}>Renault</Link>.
+          Hi, I&apos;m <Link href="/contact" style={{ color: "#E6BCCD" }}>Renault</Link>.
           <p className={styles.description}>
-            I'm a 
+            I&apos;m a 
             <code className={styles.code}>
               <Typed 
                 strings={[
@@ -115,9 +115,9 @@ export default function Home() {
             // backgroundColor: `rgba(255, 255, 255, ${offsetY / screenHeight})`,
           }}>
             <h1 className={styles.title}>
-              Hi, I'm <a href="" style={{ color: "#E6BCCD" }}>Renault</a>.
+              Hi, I&apos;m <a href="" style={{ color: "#E6BCCD" }}>Renault</a>.
               <p className={styles.description}>
-                I'm a 
+                I&apos;m a 
                 <code className={styles.code}>
                   <Typed 
                     strings={[

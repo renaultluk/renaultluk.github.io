@@ -24,7 +24,7 @@ const WorkHome = ({ posts }) => {
                     <Row className="justify-content-md-center">
                         {posts.map((post, index) => {
                             return (
-                                <Col xs={12} md={6} lg={3}>
+                                <Col key={index} xs={12} md={6} lg={3}>
                                     <Card
                                         className={styles.customCard}
                                         bg="secondary"

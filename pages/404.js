@@ -5,7 +5,7 @@ const FourOhFour = () => {
     return (
         <Container className={styles.container}>
             <span className={styles.title}>404</span>
-            <p>This is not the page you're looking for...</p>
+            <p>This is not the page you&apos;re looking for...</p>
         </Container>
     );
 }
