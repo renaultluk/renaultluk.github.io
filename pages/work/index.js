@@ -40,7 +40,7 @@ const WorkHome = ({ posts }) => {
                                                 post.data.tags && (
                                                     post.data.tags.split(',').map((value, index) => {
                                                         return (
-                                                            <PostTag tag={value} />
+                                                            <PostTag key={index} tag={value} />
                                                         );
                                                     })
                                                 )
