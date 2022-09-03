@@ -9,6 +9,57 @@ tags: Embedded Systems,Product Design,UI/UX,Project Management
 
 import PostLayout from '../../components/PostLayout'
 
+### Background
+
+This project was developed as a year long team project. I was the software lead of the team, and was responsible for developing the graphics and animation library, researching the use of machine learning models to integrate into the product, managing the codebase, and general project management, along with common duties among the team, such as problem definition, consolidating product features, form design, etc.
+
+The topic of the project was Emotional Wellness. We started off by pinpointing our target demographic as students, as depression and anxiety are huge problems among students, and with the workload and in the context of the pandemic, students feel more and more isolated, and find it increasingly hard to form support networks to help them in times of need, either through practical advice and assistance or emotional support. Therefore, our goal is to **provide immediate companionship to the user, as well as means to forge real connections and provide a safe space for users to express their emotions**. our product would be something more geared towards young people; and at the same time not too intrusive in terms of space occupied, and time used to interact with the product, so as to not interfere with students’ day to day work.
+
+
+### Product Ideation
+
+Our inspiration mainly comes from E-Pets and fidget toys, since 1) they are appealing to young people, and 2) they are commonly used to provide companionship and stress relieve. We see an opportunity to add a social aspect to these product to help students improve their mental health.
+
+Here are some iterations of the design of the product:
+<img src="/projects/iris/design-evolution.png" style={{ width: "80%" }} />
+
+After weeks of ideation, we landed on this design:
+<img src="/projects/iris/iris-whole-render.png" style={{ width: "80%" }} />
+
+The whole system is as such:
+<img src="/projects/iris/hardware-system.png" style={{ width: "80%" }} />
+<img src="/projects/iris/data-flow.jpg" style={{ width: "80%" }} />
+
+
+### Graphics and Animation Library
+
+For this product, we used the TFT display for showing the UI of the pet. A common tool for developing with the TFT display with a microcontroller is the TFT_eSPI library, which is a low level library that provide imperative functions to draw mainly shapes and text on the screen. However, since our application manages a lot of assets in its UI, since we have screens for multiple functions inside our product, and each screen has multiple visual elements, each comprises of different shapes. Therefore, we need some layer of abstraction to make developing the UI more manageable. There is the popular LVGL library for this exact purpose, but that library is more geared towards building static menus and pages; and since we are trying to develop something that can resemble a pet, we would like the flexibility of creating more lively animations. Therefore, I ultimately decided to build on top of the TFT_eSPI library, so that we can use more abstract object to manage the states and memory of the UI elements, and add animation utilities to each of these components. While developing, I did run into issues of screen flickering and inconsistent frame rates, but through researching and experimentation, I was able to use Direct Memory Access (DMA) to draw the elements at a higher speed, and sprites to create buffers in memory to draw elements out before displaying. I finally arrived at a tool that manages the component tree, with screen navigation interfacing with the hardware inertial measurement unit (IMU), and animations with easing options.
+
+While the utilities were written specifically for the project, I am planning to extract it into its own standalone library for more generalized usage.
+
+Here is the codebase for the project:
+[https://github.com/renaultluk/Emotional-Pet](https://github.com/renaultluk/Emotional-Pet) 
+
+
+### Machine Learning Research
+
+To see more details about the research, here is the Google Colab link for documentation: [https://colab.research.google.com/drive/1SQbqdtftOJxlWUl8a7v_Vo1CcEoF9pjX?usp=sharing](https://colab.research.google.com/drive/1SQbqdtftOJxlWUl8a7v_Vo1CcEoF9pjX?usp=sharing) 
+
+A gap that we identified with existing E-Pets is that they do not provide feedback to the user based on their mood, and rather only reacting to more superficial interactions. Therefore, we would like to see if we could gauge the user’s emotion, and react based on said emotions. Therefore, I looked at several approaches to predict user emotions based on the inputs we get from the product.
+
+One approach is to anaylze the voice gathered from the voice message functionality. Once we gathered the voice, we can use extract features in the user’s voice by generating mel spectrograms, or processing that further to get Mel-frequency cepstral coefficients (MFCC). We are then able to use a convolutional neural network (CNN) to pair these extracted features with the corresponding emotion, and outputs a prediction.
+<img src="/projects/iris/cnn.png" style={{ width: "80%" }} />
+
+Another approach is to use Heart Rate Variabiliy (HRV) to predict stress levels. Intuitively, the more stressed you are, the more sporadic your heart rate is. Therefore, we can get statistical features in a heart rate signal and train a Random Forests Model or a regression model to predict one’s stress levels.
+<img src="/projects/iris/hrv-forests.jpg" style={{ width: "80%" }} />
+
+Ultimately, we used the heart rate variability model, since analyzing audio and running a CNN is more computationally expensive than processing tabular data using regression and random forests by a considerable amount.
+
+
+###  Results
+
+We created an assembled prototype with finished chassis, all components connected, with the UI, navigation using the IMU, heart rate measurement, and emotion prediction running smoothly. We were honoured to receive the Chinachem PrimeMovership Award based on the project.
+
 export default function Layout({children}) {
   return <PostLayout title="IRIS - Smart Digital Pet" slug="iris" description="A smart digital pet that monitors your emotional health and provides a safe space to express your emotion." finishDate="2022-05-28" thumbnail="iris-whole-render.png">{children}</PostLayout>
 }
