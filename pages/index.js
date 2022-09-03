@@ -210,7 +210,7 @@ export default function Home() {
                         }}
                       >
                         <Button 
-                          href='/resume_test.pdf'
+                          href='/resume_new.pdf'
                           target="_blank"
                           variant='general'
                           className='d-block d-sm-inline'
@@ -258,7 +258,7 @@ export default function Home() {
             > */}
                 <Col style={{ padding: 16 }} xs={12} sm={8}>
                     <h4>Software Development</h4>
-                    <span>An aspiring full stack developer at heart, my focus is on creating frontends on websites, desktop and mobile applications; and have experience with devising backend logic and database management; as well as adding machine learning.</span>
+                    <span>An aspiring full stack developer at heart, my focus is on creating frontends on websites, desktop and mobile applications. I also have experience with devising backend logic and database management, as well as using machine learning models for data analysis.</span>
                 </Col>
             {/* </Parallax> */}
           </div>
