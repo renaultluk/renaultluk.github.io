@@ -167,7 +167,7 @@ export default function Home() {
                 >
                     <img
                       src="/profile_ring.svg" 
-                      style={{ flex: 1 }}
+                      style={{ flex: 1, width: 200, height: 200 }}
                     />
                 </Parallax>
                 <img 
