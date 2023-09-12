@@ -210,7 +210,7 @@ export default function Home() {
                         }}
                       >
                         <Button 
-                          href='/resume_test.pdf'
+                          href='https://drive.google.com/file/d/1-VTbR6kOMWL13r5r6UkDuTwz-9mUZs1S/view?usp=sharing'
                           target="_blank"
                           variant='general'
                           className='d-block d-sm-inline'
