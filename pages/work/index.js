@@ -29,7 +29,7 @@ const WorkHome = ({ posts }) => {
                                         className={styles.customCard}
                                         bg="secondary"
                                         key = {index}
-                                        style={{ maxWidth: '18rem', margin: '10px' }}
+                                        style={{ maxWidth: '18rem', margin: '10px', cursor: "pointer" }}
                                         onClick={() => router.push(`/work/${post.data.slug}`)}
                                     >
                                         <Card.Img style={{ height: '10rem', objectFit: 'cover' }} variant="top" src={`projects/${post.data.slug}/${post.data.thumbnail}`} />
