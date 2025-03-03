@@ -3,7 +3,8 @@ import path from 'path';
 import matter from 'gray-matter';
 
 const getPosts = (limit) => {
-  const dirFiles = fs.readdirSync(path.join(process.cwd(), 'src', 'app', 'work'), {
+  console.log(path.join(process.cwd(), 'data', 'work'))
+  const dirFiles = fs.readdirSync(path.join(process.cwd(), 'data', 'work'), {
     withFileTypes: true,
   });
 
@@ -12,7 +13,7 @@ const getPosts = (limit) => {
       if (!file.name.endsWith('.mdx')) return;
 
       const fileContent = fs.readFileSync(
-        path.join(process.cwd(), 'pages', 'work', file.name),
+        path.join(process.cwd(), 'data', 'work', file.name),
         'utf-8'
       );
       const { data, content } = matter(fileContent);
@@ -31,7 +32,7 @@ const getPosts = (limit) => {
     });
   }
 
-  return posts;
+  return dirFiles;
 };
 
 export const getPostMeta = (slug) => {

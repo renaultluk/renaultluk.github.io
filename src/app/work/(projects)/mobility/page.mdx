@@ -1,0 +1,14 @@
+export const metadata = {
+  title: "Smart Mobility Device",
+  slug: "mobility",
+  description: "A mobile phone-controlled smart mobility device.",
+  thumbnail: "mobility-final.jpg",
+  finishDate: "2021-06-01",
+  tags: ["Embedded Systems", "Frontend"]
+}
+
+import PostLayout from '../../../../components/PostLayout'
+
+export default function Layout({children}) {
+  return <PostLayout title="Smart Mobility Device" slug="mobility" description="A mobile phone-controlled smart mobility device." finishDate="2021-06-01" thumbnail="mobility-final.jpg">{children}</PostLayout>
+}

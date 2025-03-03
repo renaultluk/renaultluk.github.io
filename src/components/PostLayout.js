@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { Container } from 'react-bootstrap';
 
-import styles from '../styles/PostStyles.module.css';
+import styles from '../app/styles/PostStyles.module.css';
 import Header from './Header';
 
 const PostLayout = ({ children, title, slug, description, thumbnail, finishDate }) => {
