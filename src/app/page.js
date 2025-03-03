@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -5,10 +7,10 @@ import Link from 'next/link'
 import { Button, Col } from 'react-bootstrap'
 // import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax'
-import Typed from 'react-typed'
+import { ReactTyped } from 'react-typed'
 import Header from "../components/Header"
 
-import styles from '../styles/Home.module.css'
+import styles from './styles/Home.module.css'
 import Divider from '../components/Divider'
 import WordCloud from '../components/WordCloud'
 
@@ -38,7 +40,7 @@ const HeadBanner = () => {
           <p className={styles.description}>
             I&apos;m a 
             <code className={styles.code}>
-              <Typed 
+              <ReactTyped 
                 strings={[
                   'Software Developer',
                   'Product Designer',
@@ -119,7 +121,7 @@ export default function Home() {
               <p className={styles.description}>
                 I&apos;m a 
                 <code className={styles.code}>
-                  <Typed 
+                  <ReactTyped 
                     strings={[
                       'Software Developer',
                       'Product Designer',

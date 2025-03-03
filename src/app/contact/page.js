@@ -1,7 +1,9 @@
+'use client'
+
 import Head from 'next/head'
 import { Container, Row } from 'react-bootstrap';
-import Header from '../components/Header';
-import SocialButton from '../components/SocialButton';
+import Header from '../../components/Header';
+import SocialButton from '../../components/SocialButton';
 
 const Contact = () => {
     return (

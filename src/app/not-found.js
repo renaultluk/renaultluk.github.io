@@ -1,5 +1,5 @@
 import Container from 'react-bootstrap/Container'
-import styles from '../styles/four-oh-four.module.css'
+import styles from './styles/four-oh-four.module.css'
 
 const FourOhFour = () => {
     return (

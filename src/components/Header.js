@@ -1,3 +1,5 @@
+'use client'
+
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
 import FeedbackBar from './FeedbackBar';
 

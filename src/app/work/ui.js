@@ -1,16 +1,17 @@
+'use client'
+
 import Head from 'next/head';
 import { Container, Card, Row, Col } from "react-bootstrap";
-// import { getPostsMetaData } from "../../utils/getPostsData";
-import getPosts from "../../scripts/fileSystem";
-import styles from '../../styles/WorkIndex.module.css'
+import styles from '../styles/WorkIndex.module.css'
 import PostTag from '../../components/PostTag';
 import Header from "../../components/Header"
 
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
-const WorkHome = ({ posts }) => {
+const WorkUI = ({ posts }) => {
     const router = useRouter();
-    
+    if (!posts) return <></>
+
     return (
         <>
             <Head>
@@ -57,14 +58,4 @@ const WorkHome = ({ posts }) => {
     )
 }
 
-export default WorkHome;
-
-export const getStaticProps = () => {
-    const posts = getPosts(15);
-  
-    return {
-      props: {
-        posts,
-      },
-    };
-  };
+export default WorkUI;

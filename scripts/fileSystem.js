@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 
 const getPosts = (limit) => {
-  const dirFiles = fs.readdirSync(path.join(process.cwd(), 'pages', 'work'), {
+  const dirFiles = fs.readdirSync(path.join(process.cwd(), 'src', 'app', 'work'), {
     withFileTypes: true,
   });
 

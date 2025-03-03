@@ -1,6 +1,8 @@
+'use client'
+
 import { Col, Container } from "react-bootstrap";
 import Image from 'next/image'
-import styles from '../styles/SocialButton.module.css'
+import styles from '../app/styles/SocialButton.module.css'
 
 const SocialButton = (props) => {
     const redirect = () => {

@@ -3,7 +3,7 @@ import emailjs from "@emailjs/browser"
 import { useState } from "react";
 import { Button, Form, Container, Row, Alert } from "react-bootstrap";
 import Head from "next/head";
-import Header from "../components/Header";
+import Header from "../../components/Header";
 
 const Feedback = () => {
     const [email, setEmail] = useState("");

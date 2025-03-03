@@ -1,5 +1,5 @@
 import { Button } from 'react-bootstrap';
-import styles from '../styles/PostTag.module.css'
+import styles from '../app/styles/PostTag.module.css'
 
 const PostTag = (props) => {
     return (
