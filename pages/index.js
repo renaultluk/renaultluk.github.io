@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Button, Col } from 'react-bootstrap'
 // import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax'
-import Typed from 'react-typed'
+import { ReactTyped as Typed } from 'react-typed'
 import Header from "../components/Header"
 
 import styles from '../styles/Home.module.css'
